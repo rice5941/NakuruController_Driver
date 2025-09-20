@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UnoApp1.Services;
+namespace NakuruController_Driver_MVVM.Services;
 public interface IDispatcherQueueService
 {
     Microsoft.UI.Dispatching.DispatcherQueue DispatcherQueue { get; }

@@ -3,7 +3,7 @@
 #endif
 using Uno.Extensions.Markup;
 
-namespace UnoApp1.Styles;
+namespace NakuruController_Driver_MVVM.Styles;
 public sealed partial class ColorPaletteOverride : ResourceDictionary
 {
     public ColorPaletteOverride()

@@ -1,4 +1,4 @@
-namespace UnoApp1.Styles;
+namespace NakuruController_Driver_MVVM.Styles;
 
 public sealed class MaterialFontsOverride : ResourceDictionary
 {

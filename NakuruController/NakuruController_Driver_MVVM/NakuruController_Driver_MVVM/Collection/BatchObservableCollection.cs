@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
 
-namespace UnoApp1.Collections;
+namespace NakuruController_Driver_MVVM.Collections;
 
 public class BatchObservableCollection<T> : ObservableCollection<T>
 {

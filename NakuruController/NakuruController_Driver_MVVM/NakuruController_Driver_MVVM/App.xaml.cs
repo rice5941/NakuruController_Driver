@@ -1,7 +1,7 @@
 using Uno.Resizetizer;
-using UnoApp1.Services;
+using NakuruController_Driver_MVVM.Services;
 
-namespace UnoApp1;
+namespace NakuruController_Driver_MVVM;
 public partial class App : Application
 {
     /// <summary>

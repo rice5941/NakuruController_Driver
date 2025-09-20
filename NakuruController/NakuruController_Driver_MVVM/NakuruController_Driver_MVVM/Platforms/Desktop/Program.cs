@@ -1,6 +1,6 @@
 using Uno.UI.Hosting;
 
-namespace UnoApp1;
+namespace NakuruController_Driver_MVVM;
 internal class Program
 {
     [STAThread]

@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace UnoApp1.Models;
+namespace NakuruController_Driver_MVVM.Models;
 
 public class KeyData
 {

@@ -9,10 +9,10 @@ using LiveChartsCore.SkiaSharpView;
 using LiveChartsCore.SkiaSharpView.Painting;
 using Microsoft.UI.Dispatching;
 using SkiaSharp;
-using UnoApp1.Collections;
-using UnoApp1.Services;
+using NakuruController_Driver_MVVM.Collections;
+using NakuruController_Driver_MVVM.Services;
 
-namespace UnoApp1.Presentation;
+namespace NakuruController_Driver_MVVM.Presentation;
 public interface IRealTimeChartViewModel
 {
     // 読み取り専用プロパティ

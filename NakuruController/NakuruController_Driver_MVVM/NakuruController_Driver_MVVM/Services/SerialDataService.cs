@@ -2,7 +2,7 @@ using System.IO.Ports;
 using System.Text;
 using System.Text.Json;
 
-namespace UnoApp1.Services;
+namespace NakuruController_Driver_MVVM.Services;
 
 public interface ISerialDataService
 {

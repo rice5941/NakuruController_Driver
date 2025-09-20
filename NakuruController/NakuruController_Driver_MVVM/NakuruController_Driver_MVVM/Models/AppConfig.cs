@@ -1,4 +1,4 @@
-namespace UnoApp1.Models;
+namespace NakuruController_Driver_MVVM.Models;
 
 public record AppConfig
 {

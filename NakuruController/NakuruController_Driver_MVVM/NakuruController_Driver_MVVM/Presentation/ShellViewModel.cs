@@ -1,4 +1,4 @@
-namespace UnoApp1.Presentation;
+namespace NakuruController_Driver_MVVM.Presentation;
 
 public class ShellViewModel
 {
