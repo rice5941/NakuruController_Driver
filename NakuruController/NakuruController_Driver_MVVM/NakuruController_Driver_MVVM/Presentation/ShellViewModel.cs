@@ -8,7 +8,7 @@ public class ShellViewModel
         INavigator navigator)
     {
         _navigator = navigator;
-        _navigator.NavigateViewModelAsync<MainViewModel>(this);
+        _navigator.NavigateViewModelAsync<RealTimeChartViewModel>(this);
         // Add code here to initialize or attach event handlers to singleton services
     }
 }

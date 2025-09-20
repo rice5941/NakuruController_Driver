@@ -87,7 +87,7 @@ public partial class App : Application
     {
         views.Register(
             new ViewMap<Shell, ShellViewModel>(),
-            new ViewMap<MainPage, RealTimeChartViewModel>()
+            new ViewMap<RealTimeChartPage, RealTimeChartViewModel>()
         );
 
         routes.Register(
