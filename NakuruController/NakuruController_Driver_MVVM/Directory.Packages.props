@@ -1,0 +1,20 @@
+<Project ToolsVersion="15.0">
+  <!--
+    To update the version of Uno, you should instead update the Sdk version in the global.json file.
+
+    See https://aka.platform.uno/using-uno-sdk for more information.
+    See https://aka.platform.uno/using-uno-sdk#implicit-packages for more information regarding the Implicit Packages.
+  -->
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="6.0.1" />
+    <PackageVersion Include="CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView" Version="3.1.2" />
+    <PackageVersion Include="LiveCharts" Version="0.9.7" />
+    <PackageVersion Include="OxyPlot.SkiaSharp" Version="2.2.0" />
+    <PackageVersion Include="System.IO.Ports" Version="9.0.9" />
+    <PackageVersion Include="System.Reactive" Version="6.0.2" />
+    <PackageVersion Include="Uno.Extensions.Maui.WinUI" Version="6.2.3" />
+    <PackageVersion Include="Uno.Extensions.Maui.WinUI.Markup" Version="6.2.3" />
+  </ItemGroup>
+</Project>

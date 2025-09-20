@@ -1,0 +1,47 @@
+﻿<Project Sdk="Uno.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net9.0-desktop</TargetFrameworks>
+
+    <OutputType>Exe</OutputType>
+    <UnoSingleProject>true</UnoSingleProject>
+
+    <!-- Display name -->
+    <ApplicationTitle>UnoApp1</ApplicationTitle>
+    <!-- App Identifier -->
+    <ApplicationId>com.companyname.UnoApp1</ApplicationId>
+    <!-- Versions -->
+    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+    <ApplicationVersion>1</ApplicationVersion>
+    <!-- Package Publisher -->
+    <ApplicationPublisher>rice5</ApplicationPublisher>
+    <!-- Package Description -->
+    <Description>UnoApp1 powered by Uno Platform.</Description>
+
+    <!--
+      UnoFeatures let's you quickly add and manage implicit package references based on the features you want to use.
+      https://aka.platform.uno/singleproject-features
+    -->
+    <UnoFeatures>
+      CSharpMarkup;
+      Material;
+      Hosting;
+      Toolkit;
+      Logging;
+      Mvvm;
+      Configuration;
+      Localization;
+      Navigation;
+      ThemeService;
+      SkiaRenderer;
+    </UnoFeatures>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView" />
+    <PackageReference Include="OxyPlot.SkiaSharp" />
+    <PackageReference Include="System.IO.Ports" />
+    <PackageReference Include="System.Reactive" />
+    <PackageReference Include="Uno.Extensions.Maui.WinUI" />
+    <PackageReference Include="Uno.Extensions.Maui.WinUI.Markup" />
+  </ItemGroup>
+
+</Project>
