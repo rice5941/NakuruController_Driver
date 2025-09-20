@@ -7,45 +7,49 @@ using static UI;
 
 public sealed partial class RealTimeChartPage : Page
 {
-    private static readonly CartesianChart _myCartesianChart = CreateMyCartesianChart();
+    private const int RealTimeMaxDataPoints = 2000; // 最大データポイント数
+
+    private readonly CartesianChart _myCartesianChart;
+    private readonly SerialOperateView _serialOperateView;
 
     public RealTimeChartPage()
     {
+        _myCartesianChart = CreateMyCartesianChart(RealTimeMaxDataPoints);
+        _serialOperateView = CreateSerialOperateView();
+
         this.DataContext<IRealTimeChartViewModel>((page, vm) =>
+        {
             page.Background(Theme.Brushes.Background.Default)
                 .Content(
                     MyGrid
-                        .RowDefinitions("Auto,Auto,Auto,*")
+                        .RowDefinitions("Auto,Auto,*")
                         .Children(
                             TextBlock("Logging Analog Value ")
                                 .Grid(row: 0),
-                            StackPanel(
-                                ComboBox()
-                                    .ItemsSource(() => vm.AvailablePorts)
-                                    .SelectedItem(x => x.Binding(() => vm.SelectedPortName).TwoWay())
-                                    .Width(200),
-                                Button("Reflesh").Command(() => vm.UpdateAvailablePortsCommand))
-                                .Orientation(Orientation.Horizontal)
+                            _serialOperateView
                                 .Grid(row: 1),
-                            StackPanel(
-                                StackPanel(
-                                    Button("Connect").Command(() => vm.ConnectCommand),
-                                    Button("Disconnect").Command(() => vm.DisconnectCommand))
-                                .Orientation(Orientation.Horizontal),
-                                StackPanel(
-                                    Button("Start").Command(() => vm.SendStartCommand),
-                                    Button("Stop").Command(() => vm.SendStopCommand))
-                                .Orientation(Orientation.Horizontal)
-                                .HorizontalAlignment(HorizontalAlignment.Left))
-                                .Grid(row: 2),
                             _myCartesianChart
-                                .Grid(row: 3)
-                        )
-                )
-        );
+                                .Grid(row: 2)
+                    )
+                );
+        });
     }
 
-    private static CartesianChart CreateMyCartesianChart()
+    private static SerialOperateView CreateSerialOperateView()
+    {
+        var serialOperateView = new SerialOperateView();
+
+        // DataContextのバインディングを設定
+        var binding = new Binding
+        {
+            Path = new PropertyPath(nameof(IRealTimeChartViewModel.SerialOperateViewModel)),
+            Mode = BindingMode.OneWay
+        };
+        serialOperateView.SetBinding(FrameworkElement.DataContextProperty, binding);
+        return serialOperateView;
+    }
+
+    private static CartesianChart CreateMyCartesianChart(int maxLimit)
     {
         // 変数として一度チャートを作成
         var cartesianChart = new CartesianChart 
@@ -63,7 +67,7 @@ public sealed partial class RealTimeChartPage : Page
                         return $"{millisecond:F0}ms";
                     },
                     MinLimit = 0,
-                    MaxLimit = 2000,  // 5秒分のウィンドウ
+                    MaxLimit = maxLimit,// maxLimit ms分のデータを表示
                     // 表示間隔を動的に調整
                     SeparatorsPaint = new SolidColorPaint(SKColors.LightGray.WithAlpha(50)),
                     SeparatorsAtCenter = false,

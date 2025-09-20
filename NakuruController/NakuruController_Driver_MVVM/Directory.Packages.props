@@ -12,6 +12,7 @@
     <PackageVersion Include="CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView" Version="3.1.2" />
     <PackageVersion Include="LiveCharts" Version="0.9.7" />
     <PackageVersion Include="OxyPlot.SkiaSharp" Version="2.2.0" />
+    <PackageVersion Include="ReactiveProperty" Version="9.7.0" />
     <PackageVersion Include="System.IO.Ports" Version="9.0.9" />
     <PackageVersion Include="System.Reactive" Version="6.0.2" />
     <PackageVersion Include="Uno.Extensions.Maui.WinUI" Version="6.2.3" />

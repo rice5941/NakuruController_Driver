@@ -64,9 +64,10 @@ public partial class App : Application
                     services.AddSingleton<ISerialDataService, SerialDataService>();
 
                     // DispatcherQueueServiceをシングルトンとして登録
-                    services.AddSingleton<IDispatcherQueueService>(dispatcherQueueService); 
-                    services.AddTransient<RealTimeChartViewModel>();
-                    services.AddTransient<IRealTimeChartViewModel, RealTimeChartViewModel>();
+                    services.AddSingleton<IDispatcherQueueService>(dispatcherQueueService);
+                    services.AddSingleton<ISerialOperateViewModel, SerialOperateViewModel>();
+                    services.AddSingleton<IRealTimeChartViewModel, RealTimeChartViewModel>();
+
                 })
                 .UseNavigation(RegisterRoutes)
             );
@@ -94,7 +95,7 @@ public partial class App : Application
             new RouteMap("", View: views.FindByViewModel<ShellViewModel>(),
                 Nested:
                 [
-                    new ("Main", View: views.FindByViewModel<RealTimeChartViewModel>(), IsDefault:true)
+                    new ("RealTimeChart", View: views.FindByViewModel<RealTimeChartViewModel>(), IsDefault:true)
                 ]
             )
         );

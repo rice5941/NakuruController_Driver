@@ -1,10 +1,11 @@
+using System.ComponentModel;
 using System.IO.Ports;
 using System.Text;
 using System.Text.Json;
 
 namespace NakuruController_Driver_MVVM.Services;
 
-public interface ISerialDataService
+public interface ISerialDataService: INotifyPropertyChanged
 {
     /// <summary>
     /// 接続状態を取得します。

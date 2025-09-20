@@ -38,6 +38,7 @@
   <ItemGroup>
     <PackageReference Include="CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView" />
     <PackageReference Include="OxyPlot.SkiaSharp" />
+    <PackageReference Include="ReactiveProperty" />
     <PackageReference Include="System.IO.Ports" />
     <PackageReference Include="System.Reactive" />
     <PackageReference Include="Uno.Extensions.Maui.WinUI" />
