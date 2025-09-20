@@ -97,21 +97,21 @@ public partial class SerialDataService : ObservableObject, ISerialDataService
             WriteTimeout = 500
         };
 
+        var onDataReceivedAction = CreateDataReceivedHandler();
         // ラムダ式をフィールドに保存
-        _dataReceivedHandler = (sender, e) => CreateDataReceivedHandler();
+        _dataReceivedHandler = (sender, e) => onDataReceivedAction();
         _serialPort.DataReceived += _dataReceivedHandler;
 
         try
         {
             _serialPort.Open();
-
             ConnectionState = SerialConnectionState.Stop;
             StartHeartbeat();
         }
         catch (Exception ex)
         {
 
-            System.Diagnostics.Debug.WriteLine(ex.Message); 
+            System.Diagnostics.Debug.WriteLine(ex.Message);
             CleanupSerialPort();
             throw;
         }
@@ -372,7 +372,7 @@ public static class SerialConnectionHelper
     {
         return state switch
         {
-            SerialConnectionState.ReceivingAnalogValue or 
+            SerialConnectionState.ReceivingAnalogValue or
             SerialConnectionState.Stop => true,
             _ => false,
         };
@@ -384,6 +384,3 @@ public static class SerialConnectionHelper
 
     public static bool IsStop(SerialConnectionState state) => state == SerialConnectionState.Stop;
 }
-
-
-
